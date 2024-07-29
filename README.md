@@ -29,4 +29,6 @@ NER: Named Entity Recognition is a natural language processing task that involve
 AWS: For web application
 
 ## Data Prep
-Check out the data_cleaning notebook to see how the raw data was processed to combine the headlines with SPY prices. The notebook adds basic information together including a prediction period that determines what future SPY price is used for prediction. It also uses a clean_text function that handles puncuation and symbols so that data is ready to be used in training.
+Check out the data_cleaning notebook to see how the raw data was processed to combine the headlines with SPY prices. 
+The notebook adds basic information together including a prediction period that determines what future SPY price is used for prediction. 
+It also uses a clean_text function that handles punctuation and symbols so that data is ready to be used in training.
