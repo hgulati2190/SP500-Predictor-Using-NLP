@@ -1,6 +1,6 @@
 # SP500-Predictor-Using-NLP
 ## **Objective:** 
-Leverage Natural Language Processing (**NLP**) to analyze news **headlines** to provide valuable insights for predicting **stock market trends**.
+Leverage Natural Language Processing (**NLP**) to analyze news **headlines** to provide valuable insights for predicting **S&P 500 ETF (SPY)** trends.
 ## **Scope of Work:**
 
 **Data Collection & Preparation:** Prepare training data by concatenating various headlines from CNBC, Guardian and Reuters on the same day. Add SPY information seven days after the gathered headline date.
