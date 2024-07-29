@@ -1,7 +1,7 @@
 # SP500-Predictor-Using-NLP
-## Objective: 
+## **Objective:** 
 Leverage Natural Language Processing (NLP) to analyze news headlines to provide valuable insights for predicting stock market trends.
-## Scope of Work:
+## **Scope of Work:**
 
 Data Collection & Preparation: Prepare training data by concatenating various headlines from CNBC, Guardian and Reuters on the same day. Add SPY information seven days after the gathered headline date.
 
@@ -11,7 +11,7 @@ Model Selection & Explanation: Setup SHAP to explain features of the fine tuned 
 
 Web App Cloud Deployment: Build a Web App for user interactivity and deploy to the cloud
 
-## Tools & Technologies
+## **Tools & Technologies:**
 Transformers: package in Python, developed by Hugging Face, provides state-of-the-art natural language processing models and tools for tasks such as text classification, translation, question answering, and more, facilitating easy integration and use of transformer-based models.
 
 yfinance: package in Python allows users to easily download and query historical market data from Yahoo Finance, providing a convenient interface for financial data analysis and research. 
@@ -27,8 +27,3 @@ NLP: Natural Language Processing focuses on the interaction between computers an
 NER: Named Entity Recognition is a natural language processing task that involves identifying and classifying proper nouns or entities in text into predefined categories such as names of Companies, Political Groups, People, and Stock Exchanges.
 
 AWS: For web application
-
-## Data Prep
-Check out the data_cleaning notebook to see how the raw data was processed to combine the headlines with SPY prices. 
-The notebook adds basic information together including a prediction period that determines what future SPY price is used for prediction. 
-It also uses a clean_text function that handles punctuation and symbols so that data is ready to be used in training.
