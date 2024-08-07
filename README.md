@@ -1,3 +1,4 @@
+![project_logo](https://github.com/user-attachments/assets/c07fa274-640e-4287-9051-23b2dd8a5f2f)
 # SP500-Predictor-Using-NLP
 ## **Objective:** 
 Leverage Natural Language Processing (**NLP**) to analyze news **headlines** to provide valuable insights for predicting **S&P 500 ETF (SPY)** trends.
