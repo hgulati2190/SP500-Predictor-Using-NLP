@@ -1,11 +1,6 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-.DS_Store
+﻿.DS_Store
 /.ipynb_checkpoints
-01. Data Prep & EDA/.ipynb_checkpoints/data_prep-checkpoint.ipynb
-01. Data Prep & EDA/.ipynb_checkpoints/jonpg_data_prep-checkpoint.ipynb
 /01. Data Prep & EDA/.ipynb_checkpoints
 /01. Data Prep & EDA/.jupyter
 /01. Data Prep & EDA/.virtual_documents
+.vscode/settings.json
