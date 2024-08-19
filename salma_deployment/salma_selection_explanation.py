@@ -9,10 +9,10 @@ print("Current working directory:", os.getcwd())
 print("Files in current directory:", os.listdir(os.getcwd()))
 
 if os.path.exists('salma_dll'):
-    print("Files in salma folder:", os.listdir('salma_dll'))
+    print("Files in salma_dll folder:", os.listdir('salma_dll'))
 else:
-    print("'salma' folder not found in current directory")
-print("Files in salma folder:", os.listdir('salma_dll'))
+    print("'salma_dll' folder not found in current directory")
+print("Files in salma_dll folder:", os.listdir('salma_dll'))
 base_dir = os.path.dirname(__file__)
 log_reg_path = os.path.join(base_dir, 'salma_dll', 'salma_log_reg.pkl')
 with open(log_reg_path, 'rb') as file:
