@@ -11,7 +11,7 @@ import datetime
 
 
 # Load the models and transformers
-with open('/salma_log_reg.pkl', 'rb') as file:
+with open('./salma_log_reg.pkl', 'rb') as file:
     log_reg = pickle.load(file)
 
 with open('./salma_xgb_model.pkl', 'rb') as file:
