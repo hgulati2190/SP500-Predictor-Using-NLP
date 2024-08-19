@@ -6,6 +6,12 @@ import datetime
 
 import os
 print("Current working directory:", os.getcwd())
+print("Files in current directory:", os.listdir(os.getcwd()))
+print("Files in salma folder:", os.listdir('salma'))
+base_dir = os.path.dirname(__file__)
+log_reg_path = os.path.join(base_dir, 'salma', 'salma_log_reg.pkl')
+with open(log_reg_path, 'rb') as file:
+    log_reg = pickle.load(file)
 
 # Load the models and transformers
 with open('salma/salma_log_reg.pkl', 'rb') as file:
