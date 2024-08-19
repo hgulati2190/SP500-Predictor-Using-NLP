@@ -33,7 +33,7 @@ with open('salma_dll/salma_scaler.pkl', 'rb') as file:
 
 # Load functions
 def load_functions(filename):
-    with open(filename, 'rb') as file:
+    with open('salma_dll/'+filename, 'rb') as file:
         return pickle.load(file)
 
 functions_dict = load_functions('salma_functions.pkl')
