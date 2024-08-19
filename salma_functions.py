@@ -6,6 +6,7 @@ import yfinance as yf
 from datetime import datetime, timedelta
 import nltk
 
+
 def clean_text(text):
     nltk.download('punkt')
     nltk.download('stopwords')
@@ -42,10 +43,6 @@ def fetch_spy_data(date):
         return data[['Open']].reset_index().to_dict(orient='records')
     else:
         return []
-
-
-# In[ ]:
-
 
 
 
