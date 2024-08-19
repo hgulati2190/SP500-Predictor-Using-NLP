@@ -7,6 +7,11 @@ import datetime
 import os
 print("Current working directory:", os.getcwd())
 print("Files in current directory:", os.listdir(os.getcwd()))
+
+if os.path.exists('salma'):
+    print("Files in salma folder:", os.listdir('salma'))
+else:
+    print("'salma' folder not found in current directory")
 print("Files in salma folder:", os.listdir('salma'))
 base_dir = os.path.dirname(__file__)
 log_reg_path = os.path.join(base_dir, 'salma', 'salma_log_reg.pkl')
