@@ -8,8 +8,10 @@ import nltk
 
 
 def clean_text(text):
-    nltk.download('punkt')
-    nltk.download('stopwords')
+   nltk.data.path.append('/salma/nltk_data')
+   nltk.download('punkt', download_dir='/salma/nltk_data')
+   nltk.download('stopwords', download_dir='/salma/nltk_data')
+
     text = re.sub(r'[^A-Za-z\s]', '', text)
     text = text.lower()
     tokens = nltk.word_tokenize(text)
