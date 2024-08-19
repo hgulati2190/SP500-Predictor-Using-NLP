@@ -11,16 +11,16 @@ import datetime
 
 
 # Load the models and transformers
-with open('salma/salma_log_reg.pkl', 'rb') as file:
+with open('./salma/salma_log_reg.pkl', 'rb') as file:
     log_reg = pickle.load(file)
 
-with open('salma/salma_xgb_model.pkl', 'rb') as file:
+with open('./salma/salma_xgb_model.pkl', 'rb') as file:
     xgb_model = pickle.load(file)
 
-with open('salma/salma_vectorizer.pkl', 'rb') as file:
+with open('./salma/salma_vectorizer.pkl', 'rb') as file:
     vectorizer = pickle.load(file)
 
-with open('salma/salma_scaler.pkl', 'rb') as file:
+with open('./salma/salma_scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
     
 
@@ -42,7 +42,7 @@ functions_dict = {
     'fetch_spy_data': fetch_spy_data
 }
 
-save_functions(functions_dict, 'salma/salma_functions.pkl')
+save_functions(functions_dict, './salma/salma_functions.pkl')
 
 
 # In[198]:
@@ -55,7 +55,7 @@ def load_functions(filename):
     with open(filename, 'rb') as file:
         return pickle.load(file)
 
-functions_dict = load_functions('salma/salma_functions.pkl')
+functions_dict = load_functions('./salma/salma_functions.pkl')
 print("Functions Loaded:", functions_dict)
 
 clean_text_func = functions_dict['clean_text']
