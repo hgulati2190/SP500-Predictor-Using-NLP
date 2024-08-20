@@ -16,8 +16,6 @@ print("Current working directory:", os.getcwd())
 salma_dll_path = os.path.join('salma_deployment', 'salma_dll')
 print("Files in current directory:", os.listdir(salma_dll_path))
 
-
-print("Files in salma_dll folder:", os.listdir('salma_dll'))
 base_dir = os.path.dirname(__file__)
 log_reg_path = os.path.join(base_dir, 'salma_dll', 'salma_log_reg.pkl')
 with open(log_reg_path, 'rb') as file:
