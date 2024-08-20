@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import datetime
+import nltk
 
 import os
 print("Current working directory:", os.getcwd())
@@ -35,6 +36,12 @@ with open('salma_dll/salma_scaler.pkl', 'rb') as file:
 def load_functions(filename):
     with open(filename, 'rb') as file:
         return pickle.load(file)
+
+nltk.download('punkt', download_dir='nltk_data')
+nltk.download('stopwords', download_dir='nltk_data')
+
+# Add the path to nltk data
+nltk.data.path.append('nltk_data')
 
 functions_dict = load_functions('salma_functions.pkl')
 clean_text_func = functions_dict['clean_text']
