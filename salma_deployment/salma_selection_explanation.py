@@ -51,7 +51,7 @@ nltk.download('stopwords', download_dir='nltk_data')
 # Add the path to nltk data
 nltk.data.path.append('nltk_data')
 
-functions_dict = load_functions('salma_functions.pkl')
+functions_dict = load_functions('salma_deployment\salma_functions.pkl')
 print("Functions Loaded:", functions_dict)
 
 clean_text_func = functions_dict['clean_text']
