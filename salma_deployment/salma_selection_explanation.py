@@ -37,8 +37,11 @@ def load_functions(filename):
     with open(filename, 'rb') as file:
         return pickle.load(file)
 
-nltk.download('punkt', download_dir='nltk_data')
-nltk.download('stopwords', download_dir='nltk_data')
+# Download NLTK data if not already available
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
 # Add the path to nltk data
 nltk.data.path.append('nltk_data')
