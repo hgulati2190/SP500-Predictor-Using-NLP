@@ -12,9 +12,7 @@ import nltk
 import io
 import streamlit.components.v1 as components
 import os
-print("Current working directory:", os.getcwd())
-salma_dll_path = os.path.join('salma_deployment', 'salma_dll')
-print("Files in current directory:", os.listdir(salma_dll_path))
+
 
 base_dir = os.path.dirname(__file__)
 log_reg_path = os.path.join(base_dir, 'salma_dll', 'salma_log_reg.pkl')
@@ -51,7 +49,7 @@ nltk.download('stopwords', download_dir='nltk_data')
 # Add the path to nltk data
 nltk.data.path.append('nltk_data')
 
-functions_dict = load_functions('salma_deployment/salma_functions.pkl')
+functions_dict = load_functions('salma_deployment/salma_dll/salma_functions.pkl')
 print("Functions Loaded:", functions_dict)
 
 clean_text_func = functions_dict['clean_text']
