@@ -36,12 +36,10 @@ with open('salma_dll/salma_scaler.pkl', 'rb') as file:
 def load_functions(filename):
     with open(filename, 'rb') as file:
         return pickle.load(file)
-
-# Download NLTK data if not already available
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
+    
+nltk.download('punkt_tab')
+nltk.download('punkt', download_dir='nltk_data')
+nltk.download('stopwords', download_dir='nltk_data')
 
 # Add the path to nltk data
 nltk.data.path.append('nltk_data')
