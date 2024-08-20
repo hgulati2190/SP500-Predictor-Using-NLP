@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import shap
 import nltk
 import io
-
+import streamlit.components.v1 as components
 import os
 print("Current working directory:", os.getcwd())
 print("Files in current directory:", os.listdir(os.getcwd()))
@@ -148,7 +148,7 @@ importance_df = pd.DataFrame({
 # Plot feature importance for Logistic Regression
 fig, ax = plt.subplots(figsize=(10, 8))
 importance_df.head(20).plot(kind='barh', x='Feature', y='Importance', ax=ax, legend=False)
-ax.set_title('Top 20 Feature Importances for Logistic Regression')
+ax.set_title('Top 20 Feature Importances for Logistic Regression - From Original Model')
 ax.set_xlabel('Importance')
 ax.set_ylabel('Feature')
 
@@ -157,7 +157,7 @@ st.pyplot(fig)
 
 # In[146]:
 
-
+st.write("### Word Frequency - Nothing to do with our Model")
 result=""
 result= result.join(text_input)
 
@@ -206,6 +206,11 @@ buf.seek(0)
 # Display the SHAP summary plot in Streamlit
 st.image(buf, use_column_width=True, caption='SHAP Summary Plot')
 
+
+# Streamlit app layout
+st.title('SHAP Force Plot')
+
+# Input for instance index
 instance_index = st.number_input(
     'Enter the instance index (0 to {})'.format(len(df_headlines) - 1),
     min_value=0,
@@ -217,19 +222,26 @@ instance_index = st.number_input(
 # Ensure the instance_index does not exceed the number of samples
 instance_index = min(instance_index, len(df_headlines) - 1)
 
-
-# In[176]:
-
-
-# Compute SHAP values for a specific instance (e.g., first instance in test data)
+# Compute SHAP values for the selected instance
 shap_values_instance = explainer_log.shap_values(text_tfidf[instance_index].toarray())
 
-# Draw the SHAP force plot for the instance
-shap.force_plot(explainer_log.expected_value, shap_values_instance, text_tfidf[instance_index].toarray(), feature_names=vectorizer.get_feature_names_out())
-
-
-# In[ ]:
-
-
+# Generate and save the SHAP force plot as a static image
+try:
+    shap.force_plot(
+        explainer_log.expected_value,
+        shap_values_instance,
+        text_tfidf[instance_index].toarray(),
+        feature_names=vectorizer.get_feature_names_out(),
+        matplotlib=True  # Optionally use matplotlib rendering
+    )
+    
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+    buf.seek(0)
+    
+    # Display the plot in Streamlit
+    st.image(buf, caption='SHAP Force Plot', use_column_width=True)
+except Exception as e:
+    st.write(f"An error occurred: {e}")
 
 
