@@ -63,7 +63,7 @@ st.dataframe(df_headlines[['text']])
 # Extract the 'Open' price from the fetched data
 open_price_data = fetch_spy_data_func(datetime.datetime.now())
 
-st.write("### Opening Price" - datetime.datetime.now())
+st.write("### Opening Price")
 st.write(open_price_data)
 st.write(open_price_data[0]['Open'])
 
