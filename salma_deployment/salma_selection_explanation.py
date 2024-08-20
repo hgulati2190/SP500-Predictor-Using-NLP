@@ -13,12 +13,10 @@ import io
 import streamlit.components.v1 as components
 import os
 print("Current working directory:", os.getcwd())
-print("Files in current directory:", os.listdir(os.getcwd()))
+salma_dll_path = os.path.join('salma_deployment', 'salma_dll')
+print("Files in current directory:", os.listdir(salma_dll_path))
 
-if os.path.exists('salma_dll'):
-    print("Files in salma_dll folder:", os.listdir('salma_dll'))
-else:
-    print("'salma_dll' folder not found in current directory")
+
 print("Files in salma_dll folder:", os.listdir('salma_dll'))
 base_dir = os.path.dirname(__file__)
 log_reg_path = os.path.join(base_dir, 'salma_dll', 'salma_log_reg.pkl')
@@ -26,16 +24,16 @@ with open(log_reg_path, 'rb') as file:
     log_reg = pickle.load(file)
 
 # Load the models and transformers
-with open('salma_dll/salma_log_reg.pkl', 'rb') as file:
+with open('salma_deployment/salma_dll/salma_log_reg.pkl', 'rb') as file:
     log_reg = pickle.load(file)
 
-with open('salma_dll/salma_xgb_model.pkl', 'rb') as file:
+with open('salma_deployment/salma_dll/salma_xgb_model.pkl', 'rb') as file:
     xgb_model = pickle.load(file)
 
-with open('salma_dll/salma_vectorizer.pkl', 'rb') as file:
+with open('salma_deployment/salma_dll/salma_vectorizer.pkl', 'rb') as file:
     vectorizer = pickle.load(file)
 
-with open('salma_dll/salma_scaler.pkl', 'rb') as file:
+with open('salma_deployment/salma_dll/salma_scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
     
 
