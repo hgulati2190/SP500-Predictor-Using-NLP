@@ -61,27 +61,33 @@ st.write("### News Headlines")
 st.dataframe(df_headlines[['text']])
 
 # Extract the 'Open' price from the fetched data
-open_price_data = fetch_spy_data_func(datetime.datetime.now())
-
-st.write("### Opening Price")
-st.write(open_price_data)
-st.write(open_price_data[0]['Open'])
-
-# Prediction button
-if st.button('Predict'):
-    # Transform the input
-    text_tfidf = vectorizer.transform(df_headlines['cleaned_text'])
-    open_price_input = open_price_data[0]['Open']
+try:
+    open_price_data = fetch_spy_data_func(datetime.datetime.now())
     
-    # Transform the opening price
-    open_scaled = scaler.transform(np.array([[open_price_input]]))
-    
-    # Make predictions
-    text_prediction = log_reg.predict(text_tfidf)
-    open_prediction = xgb_model.predict(open_scaled)
-    
-    # Combine predictions
-    combined_prediction = (text_prediction[0] + open_prediction[0]) / 2
-    final_prediction = int(np.round(combined_prediction))
-    
-    st.write(f'Predicted Movement: {"Up" if final_prediction == 1 else "Down"}')
+    # Check if open_price_data is a list and has at least one element
+    if isinstance(open_price_data, list) and len(open_price_data) > 0 and 'Open' in open_price_data[0]:
+        st.write("### Opening Price")
+        st.write(open_price_data[0]['Open'])
+        
+        # Prediction button
+        if st.button('Predict'):
+            # Transform the input
+            text_tfidf = vectorizer.transform(df_headlines['cleaned_text'])
+            open_price_input = open_price_data[0]['Open']
+            
+            # Transform the opening price
+            open_scaled = scaler.transform(np.array([[open_price_input]]))
+            
+            # Make predictions
+            text_prediction = log_reg.predict(text_tfidf)
+            open_prediction = xgb_model.predict(open_scaled)
+            
+            # Combine predictions
+            combined_prediction = (text_prediction[0] + open_prediction[0]) / 2
+            final_prediction = int(np.round(combined_prediction))
+            
+            st.write(f'Predicted Movement: {"Up" if final_prediction == 1 else "Down"}')
+    else:
+        st.write("Error: No valid data available for 'Open' price.")
+except Exception as e:
+    st.write(f"An error occurred: {e}")
