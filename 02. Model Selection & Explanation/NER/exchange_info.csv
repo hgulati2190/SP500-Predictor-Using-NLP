@@ -1,0 +1,39 @@
+﻿Stock exchange,MIC,Region,City
+,,,
+New York Stock Exchange,XNYS, United States,New York City
+Nasdaq,XNAS, United States,New York City
+Euronext,XAMS, Europe,Amsterdam
+,XBRU,,Brussels
+,XMSM,,Dublin
+,XLIS,,Lisbon
+,XMIL,,Milan
+,XOSL,,Oslo
+,XPAR,,Paris
+Shanghai Stock Exchange,XSHG, China,Shanghai
+Japan Exchange Group,XJPX, Japan,Tokyo
+(Tokyo Stock Exchange),(TYO),,
+Shenzhen Stock Exchange,XSHE, China,Shenzhen
+Bombay Stock Exchange,XBOM, India,Mumbai
+National Stock Exchange,XNSE, India,Mumbai
+Hong Kong Stock Exchange,XHKG, Hong Kong,Hong Kong
+Toronto Stock Exchange,XTSE, Canada,Toronto
+London Stock Exchange,XLON, United Kingdom,London
+Saudi Stock Exchange (Tadawul),XSAU, Saudi Arabia,Riyadh
+German Stock Exchange (Deutsche Börse AG),XFRA, Germany,Frankfurt
+,,,
+,,,
+SIX Swiss Exchange,XSWX,  Switzerland,Zürich
+Nasdaq Nordic and Baltic Exchanges,, Europe,
+Copenhagen Stock Exchange,XCSE, Denmark,Copenhagen
+Stockholm Stock Exchange,XSTO, Sweden,Stockholm
+Helsinki Stock Exchange,XHEL, Finland,Helsinki
+Tallinn Stock Exchange,XTAL, Estonia,Tallinn
+Riga Stock Exchange,XRIS, Latvia,Riga
+Vilnius Stock Exchange,XLIT, Lithuania,Vilnius
+Iceland Stock Exchange,XICE, Iceland,Reykjavík
+Korea Exchange,XKOS, South Korea,Seoul
+,,,Busan
+Taiwan Stock Exchange,XTAI, Taiwan,Taipei
+Australian Securities Exchange,XASX, Australia,Sydney
+Johannesburg Stock Exchange,XJSE, South Africa,Johannesburg
+Tehran Stock Exchange,XTEH, Iran,Tehran
