@@ -1,3 +1,4 @@
+pip install streamlit shap xgboost transformers
 import streamlit as st
 import pandas as pd
 import shap
@@ -5,7 +6,7 @@ import xgboost as xgb
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
 # Load the model
-model_path = "./02. Model Selection & Explanation/xgb_best_model_hemant.pkl"  # Update with your model's path
+model_path = "./xgb_best_model_hemant.pkl"  
 xgb_model = xgb.XGBClassifier()
 xgb_model.load_model(model_path)
 
