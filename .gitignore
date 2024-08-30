@@ -1,0 +1,13 @@
+/.ipynb_checkpoints/
+/.jupyter/
+/.virtual_documents/
+/01. Data Prep & EDA/.ipynb_checkpoints/
+/01. Data Prep & EDA/.jupyter/
+/01. Data Prep & EDA/.virtual_documents/
+/01. Data Prep & EDA/tmp/
+/02. Model Selection & Explanation/.ipynb_checkpoints/
+/02. Model Selection & Explanation/tmp/
+/03. Web App Deployment/.ipynb_checkpoints/
+/data/.ipynb_checkpoints/
+/data/tmp/
+/tmp/
