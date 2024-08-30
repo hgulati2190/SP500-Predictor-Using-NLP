@@ -1,0 +1,14 @@
+andas
+scikit-learn
+xgboost
+shap
+matplotlib
+streamlit
+requests
+beautifulsoup4
+yfinance
+nltk
+shap
+WordCloud
+AutoTokenizer
+TFAutoModelForSequenceClassification
