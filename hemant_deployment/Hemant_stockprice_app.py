@@ -8,6 +8,7 @@ import os
 import pickle
 import tensorflow as tf
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
+import streamlit.components.v1 as components  # For rendering HTML
 
 
 
@@ -85,5 +86,11 @@ if st.button("Predict"):
     shap_values = explainer.shap_values(input_data)
     st.subheader("SHAP Explanation")
     shap.initjs()
-    st_shap = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
-    st.pyplot(st_shap)
+   # st_shap = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
+   # st.pyplot(st_shap)
+    
+    # Generate SHAP force plot
+    force_plot_html = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
+
+    # Render SHAP force plot in Streamlit
+    components.html(force_plot_html, height=500, scrolling=True)
