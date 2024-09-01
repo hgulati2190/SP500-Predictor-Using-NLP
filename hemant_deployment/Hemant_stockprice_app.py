@@ -98,8 +98,7 @@ if st.button("Predict"):
       # Generate SHAP force plot and save as HTML
     force_plot_html = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
     html_file_path = 'hemant_deployment/shap_force_plot.html'  # Save to a temporary path
-    with open(html_file_path, 'w') as f:
-        f.write(force_plot_html)
+    shap.save_html(html_file_path, force_plot_html)  # Save HTML directly
 
     # Read and display the HTML file in Streamlit
     with open(html_file_path, 'r') as f:
