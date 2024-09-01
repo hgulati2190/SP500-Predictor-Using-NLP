@@ -1,4 +1,4 @@
-pip install streamlit shap xgboost transformers
+#pip install streamlit shap xgboost transformers
 import streamlit as st
 import pandas as pd
 import shap
