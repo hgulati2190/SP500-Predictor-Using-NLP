@@ -69,7 +69,7 @@ if st.button("Predict"):
     input_data = pd.DataFrame({
         "Sentiment_Score": [sentiment_score],
         "Close": [example_close_price],
-        "Variation": [example_variation]
+        #"Variation": [example_variation]
     })
     
     # Make a prediction
