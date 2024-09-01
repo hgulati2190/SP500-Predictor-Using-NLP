@@ -6,6 +6,7 @@ import xgboost as xgb
 import joblib
 import os
 import pickle
+import tensorflow as tf
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
 # Ensure dill is installed
