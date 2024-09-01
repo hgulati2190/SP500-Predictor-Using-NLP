@@ -90,7 +90,18 @@ if st.button("Predict"):
    # st.pyplot(st_shap)
     
     # Generate SHAP force plot
-    force_plot_html = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
+    #force_plot_html = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
 
     # Render SHAP force plot in Streamlit
-    components.html(force_plot_html, height=500, scrolling=True)
+    #components.html(force_plot_html, height=500, scrolling=True)
+
+      # Generate SHAP force plot and save as HTML
+    force_plot_html = shap.force_plot(explainer.expected_value, shap_values, input_data, show=False)
+    html_file_path = 'hemant_deployment/shap_force_plot.html'  # Save to a temporary path
+    with open(html_file_path, 'w') as f:
+        f.write(force_plot_html)
+
+    # Read and display the HTML file in Streamlit
+    with open(html_file_path, 'r') as f:
+        html_content = f.read()
+    components.html(html_content, height=500, scrolling=True)
