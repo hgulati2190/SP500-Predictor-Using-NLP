@@ -1,4 +1,4 @@
-andas
+pandas
 scikit-learn
 xgboost
 shap
@@ -8,7 +8,6 @@ requests
 beautifulsoup4
 yfinance
 nltk
-shap
-WordCloud
-AutoTokenizer
-TFAutoModelForSequenceClassification
+wordcloud
+transformers
+dill

@@ -3,15 +3,39 @@ import streamlit as st
 import pandas as pd
 import shap
 import xgboost as xgb
+import joblib
+import os
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
+# Ensure dill is installed
+try:
+    import dill
+except ImportError:
+    print("dill module is not installed. Please install it using 'pip install dill'")
+    exit()
 
 
 # Load the model
-#model_path = "./xgb_best_model_hemant.pkl" 
-model_path = "./02. Model Selection & Explanation/xgb_best_model_hemant.pkl"
+# Define the path to your model file
+model_path = 'xgb_best_model_hemant.pkl'
 xgb_model = xgb.XGBClassifier()
 xgb_model.load_model(model_path)
+
+# Check if the model file exists
+if os.path.exists(model_path):
+    print(f"Model file found: {model_path}")
+    
+    # Load the model
+    try:
+        model = joblib.load(model_path)
+        print("Model loaded successfully.")
+        
+    
+    except Exception as e:
+        print(f"Error loading model: {e}")
+else:
+    print(f"Model file not found: {model_path}")
+
 
 # Load the tokenizer and sentiment model
 model_name = "distilbert-base-uncased-finetuned-sst-2-english"
