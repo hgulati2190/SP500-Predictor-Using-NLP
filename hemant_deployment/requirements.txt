@@ -12,3 +12,4 @@ wordcloud
 transformers
 dill
 tensorflow
+tf-keras
