@@ -5,9 +5,11 @@ import shap
 import xgboost as xgb
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
+
+
 # Load the model
 #model_path = "./xgb_best_model_hemant.pkl" 
-model_path = "Hemant Deployment/xgb_best_model_hemant.pkl"
+model_path = "xgb_best_model_hemant.pkl"
 xgb_model = xgb.XGBClassifier()
 xgb_model.load_model(model_path)
 
