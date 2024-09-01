@@ -5,6 +5,7 @@ import shap
 import xgboost as xgb
 import joblib
 import os
+import pickle
 from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 
 # Ensure dill is installed
@@ -17,24 +18,21 @@ except ImportError:
 
 # Load the model
 # Define the path to your model file
-model_path = 'xgb_best_model_hemant.pkl'
-xgb_model = xgb.XGBClassifier()
-xgb_model.load_model(model_path)
+#model_path = 'xgb_best_model_hemant.pkl'
+#xgb_model = xgb.XGBClassifier()
+#xgb_model.load_model(model_path)
 
-# Check if the model file exists
-if os.path.exists(model_path):
-    print(f"Model file found: {model_path}")
-    
-    # Load the model
-    try:
-        model = joblib.load(model_path)
-        print("Model loaded successfully.")
-        
-    
-    except Exception as e:
-        print(f"Error loading model: {e}")
-else:
-    print(f"Model file not found: {model_path}")
+
+# Define the path to your model file
+model_path = 'hemant_deployment/xgb_best_model_hemant.pkl'
+
+# Load the model
+try:
+    with open(model_path, 'rb') as file:
+        xgb_model = pickle.load(file)
+    print("Model loaded successfully.")
+except Exception as e:
+    print(f"Error loading model: {e}")
 
 
 # Load the tokenizer and sentiment model
