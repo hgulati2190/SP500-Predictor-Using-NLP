@@ -13,3 +13,4 @@ transformers
 dill
 tensorflow
 tf-keras
+ipython
