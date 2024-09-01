@@ -11,3 +11,4 @@ nltk
 wordcloud
 transformers
 dill
+tensorflow
